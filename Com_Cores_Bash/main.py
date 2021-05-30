@@ -121,7 +121,7 @@ while True:
         continue
 
     elif escolha == '9':
-        quantidade_de_chaves = int(input('Quantidade de Chaves da Lista\n (Padrão: 15000): '))
+        quantidade_de_chaves = int(input('Quantidade de Chaves da Lista\n (Padrão: 20000): '))
         limite_max_algarismo = int(input('Limite Máximo de Algarismo\n (Padrão: 5000): '))
         print('Configurações Salvas...')
         continue
