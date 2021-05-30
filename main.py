@@ -4,7 +4,7 @@ from algoritmos_ordenacao import *
 
 # Controladores para criação da lista
 lista = []
-quantidade_de_chaves = 20000
+quantidade_de_chaves = 15000
 limite_max_algarismo = 5000
 
 
@@ -110,47 +110,69 @@ while True:
         continue
 
     elif escolha == '2':
-        print('Deletando a lista...')
-        deletar_lista()
+        if not lista:
+            print('A lista está vazia, crie uma primeiro...')
+        else:
+            print('Deletando a lista...')
+            deletar_lista()
         continue
 
     elif escolha == '3':
-        print('Ordenando com Bubble Sort...')
-        ordenar_bubble(lista)
+        if not lista:
+            print('A lista está vazia, crie uma primeiro...')
+        else:
+            print('Ordenando com Bubble Sort...')
+            ordenar_bubble(lista)
         continue
 
     elif escolha == '4':
-        print('Ordenando com Insertion Sort...')
-        ordenar_insertion(lista)
+        if not lista:
+            print('A lista está vazia, crie uma primeiro...')
+        else:
+            print('Ordenando com Insertion Sort...')
+            ordenar_insertion(lista)
         continue
 
     elif escolha == '5':
-        print('Ordenando com Shell Sort...')
-        ordenar_shell(lista)
+        if not lista:
+            print('A lista está vazia, crie uma primeiro...')
+        else:
+            print('Ordenando com Shell Sort...')
+            ordenar_shell(lista)
         continue
 
     elif escolha == '6':
-        print('Ordenando com Merge Sort...')
-        ordenar_merge(lista)
+        if not lista:
+            print('A lista está vazia, crie uma primeiro...')
+        else:
+            print('Ordenando com Merge Sort...')
+            ordenar_merge(lista)
         continue
 
     elif escolha == '7':
-        print('Ordenando com Quick Sort...')
-        ordenar_quick(lista)
+        if not lista:
+            print('A lista está vazia, crie uma primeiro...')
+        else:
+            print('Ordenando com Quick Sort...')
+            ordenar_quick(lista)
         continue
 
     elif escolha == '8':
-        print('Comparando Algoritmos...')
-        ordenar_bubble(lista)
-        ordenar_insertion(lista)
-        ordenar_shell(lista)
-        ordenar_merge(lista)
-        ordenar_quick(lista)
+        if not lista:
+            print('A lista está vazia, crie uma primeiro...')
+        else:
+            print('Comparando Algoritmos...')
+            ordenar_bubble(lista)
+            ordenar_insertion(lista)
+            ordenar_shell(lista)
+            ordenar_merge(lista)
+            ordenar_quick(lista)
         continue
 
     elif escolha == '9':
-        quantidade_de_chaves = int(input('Quantidade de Chaves da Lista\n (Padrão: 20000): '))
+        quantidade_de_chaves = int(input('Quantidade de Chaves da Lista\n (Padrão: 15000): '))
         limite_max_algarismo = int(input('Limite Máximo de Algarismo\n (Padrão: 5000): '))
+        print('Configurações Salvas...')
         continue
 
     elif escolha == 'X':
