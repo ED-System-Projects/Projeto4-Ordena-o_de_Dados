@@ -1,3 +1,63 @@
+import time
+
+
+# Execução e calculo de tempo dos algoritmos de ordenação
+def ordenar_bubble(lista_bubble):
+    lista_desordenada = lista_bubble.copy()
+    # Bubble Sort
+    abertura_bubble = time.time()
+    bubble_sort(lista_desordenada)
+    termino_bubble = time.time()
+    total_blubble = (termino_bubble - abertura_bubble)
+    print(f'Tempo \033[1;32mBubble Sort\033[0;0m:    \033[31m{total_blubble}\033[0;0m segundos.')
+    separador()
+
+
+def ordenar_insertion(lista_insertion):
+    lista_desordenada = lista_insertion.copy()
+    # Insertion Sort
+    abertura_insertion = time.time()
+    insertion_sort(lista_desordenada)
+    termino_insertion = time.time()
+    total_insert = (termino_insertion - abertura_insertion)
+    print(f'Tempo \033[1;33mInsertion Sort\033[0;0m: \033[31m{total_insert}\033[0;0m segundos.')
+    separador()
+
+
+def ordenar_shell(lista_shell):
+    lista_desordenada = lista_shell.copy()
+    # Shell Sort
+    abertura_shell = time.time()
+    shell_sort(lista_desordenada)
+    termino_shell = time.time()
+    total_shell = (termino_shell - abertura_shell)
+    print(f'Tempo \033[1;36mShell Sort\033[0;0m:     \033[31m{total_shell}\033[0;0m segundos.')
+    separador()
+
+
+def ordenar_merge(lista_merge):
+    lista_desordenada = lista_merge.copy()
+    # Merge Sort
+    abertura_merge = time.time()
+    merge_sort(lista_desordenada)
+    termino_merge = time.time()
+    total_merge = (termino_merge - abertura_merge)
+    print(f'Tempo \033[1;35mMerge Sort\033[0;0m:     \033[31m{total_merge}\033[0;0m segundos.')
+    separador()
+
+
+def ordenar_quick(lista_quick):
+    lista_desordenada = lista_quick.copy()
+    # Quick Sort
+    abertura_quick = time.time()
+    quick_sort(lista_desordenada)
+    termino_quick = time.time()
+    total_quick = (termino_quick - abertura_quick)
+    print(f'Tempo \033[1;34mQuick Sort\033[0;0m:     \033[31m{total_quick}\033[0;0m segundos.')
+    separador()
+
+
+# Algoritmos
 
 # Bubble Sort
 def bubble_sort(lista):
