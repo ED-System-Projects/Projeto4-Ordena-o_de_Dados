@@ -1,4 +1,5 @@
 import time
+import shutil
 
 
 # Execução e calculo de tempo dos algoritmos de ordenação
@@ -9,7 +10,7 @@ def ordenar_bubble(lista_bubble):
     bubble_sort(lista_desordenada)
     termino_bubble = time.time()
     total_blubble = (termino_bubble - abertura_bubble)
-    print(f'Tempo \033[1;32mBubble Sort\033[0;0m:    \033[31m{total_blubble}\033[0;0m segundos.')
+    print(f'Tempo Bubble Sort:    {total_blubble} segundos.')
     separador()
 
 
@@ -20,7 +21,7 @@ def ordenar_insertion(lista_insertion):
     insertion_sort(lista_desordenada)
     termino_insertion = time.time()
     total_insert = (termino_insertion - abertura_insertion)
-    print(f'Tempo \033[1;33mInsertion Sort\033[0;0m: \033[31m{total_insert}\033[0;0m segundos.')
+    print(f'Tempo Insertion Sort: {total_insert} segundos.')
     separador()
 
 
@@ -31,7 +32,7 @@ def ordenar_shell(lista_shell):
     shell_sort(lista_desordenada)
     termino_shell = time.time()
     total_shell = (termino_shell - abertura_shell)
-    print(f'Tempo \033[1;36mShell Sort\033[0;0m:     \033[31m{total_shell}\033[0;0m segundos.')
+    print(f'Tempo Shell Sort:     {total_shell} segundos.')
     separador()
 
 
@@ -42,7 +43,7 @@ def ordenar_merge(lista_merge):
     merge_sort(lista_desordenada)
     termino_merge = time.time()
     total_merge = (termino_merge - abertura_merge)
-    print(f'Tempo \033[1;35mMerge Sort\033[0;0m:     \033[31m{total_merge}\033[0;0m segundos.')
+    print(f'Tempo Merge Sort:     {total_merge} segundos.')
     separador()
 
 
@@ -53,7 +54,7 @@ def ordenar_quick(lista_quick):
     quick_sort(lista_desordenada)
     termino_quick = time.time()
     total_quick = (termino_quick - abertura_quick)
-    print(f'Tempo \033[1;34mQuick Sort\033[0;0m:     \033[31m{total_quick}\033[0;0m segundos.')
+    print(f'Tempo Quick Sort:     {total_quick} segundos.')
     separador()
 
 
@@ -70,7 +71,7 @@ def bubble_sort(lista):
                 lista[i], lista[i + 1] = lista[i + 1], lista[i]
                 ordenado = False
     separador()
-    print('\033[1;32mBubble Sort\033[0;0m - lista ordenada:\n', lista)
+    print('Bubble Sort - lista ordenada:\n', lista)
 
 
 # Insertion Sort
@@ -84,7 +85,7 @@ def insertion_sort(lista):
 
         lista[posicao_atual] = valor_atual
     separador()
-    print(f'\033[1;33mInsertion Sort\033[0;0m - lista ordenada:\n', lista)
+    print(f'Insertion Sort - lista ordenada:\n', lista)
 
 
 # Shell Sort
@@ -102,7 +103,7 @@ def shell_sort(lista):
             lista[posicao_atual] = valor_atual
         intervalo //= 2
     separador()
-    print(f'\033[1;36mShell Sort\033[0;0m - lista ordenada:\n', lista)
+    print(f'Shell Sort - lista ordenada:\n', lista)
 
 
 # Merge Sort
@@ -135,7 +136,7 @@ def merge_sort(lista):
 
     merge(lista)
     separador()
-    print(f'\033[1;35mMerge Sort\033[0;0m - lista ordenada:\n', lista)
+    print(f'Merge Sort - lista ordenada:\n', lista)
 
 
 # Quick Sort
@@ -161,9 +162,12 @@ def quick_sort(lista):
 
     quick(lista, 0, len(lista) - 1)
     separador()
-    print(f'\033[1;34mQuick Sort\033[0;0m: - lista ordenada:\n', lista)
+    print(f'Quick Sort: - lista ordenada:\n', lista)
 
 
+# Função separadora baseada nas colunas do terminal de execução
 def separador():
-    quant = 200
-    print('-' * quant)
+    tamanho_terminal = shutil.get_terminal_size((180, 20))
+    colunas = tamanho_terminal.columns
+    # quant_pycharm = 180
+    print('-' * colunas)

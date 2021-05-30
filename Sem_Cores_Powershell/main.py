@@ -9,37 +9,42 @@ limite_max_algarismo = 5000
 
 def criar_lista():
     if not lista:
-        # criacao da lista
+        # Criando da Lista
         for i in range(quantidade_de_chaves):
             lista.append(random.randint(1, limite_max_algarismo))
-        print(f'\033[30;1;47mLista Criada\033[0;0m:\n', lista)
+        separador()
+        print(f'Lista Criada:\n', lista)
+        separador()
     else:
-        print('A lista já foi criada, caso queira alterar delete a lista primeiro.')
+        print('A lista já foi criada, caso queira altera-la delete a lista primeiro.')
 
 
 def deletar_lista():
     if not lista:
         print(f'A lista já está vazia')
     else:
+        # Apagando a Lista
         lista.clear()
-    print(f'\033[30;1;47mLista Deletada\033[0;0m:\n', lista)
+    separador()
+    print(f'Lista Deletada:\n', lista)
+    separador()
 
 
 while True:
     print(f'''
 ╔══════════════════════════╗
-║           \033[1mMENU\033[0;0m           ║
-║  (0) « \033[1mImprimir Lista\033[0;0m »  ║
-║  (1) « \033[30;1;47mCriar Lista\033[0;0m »     ║
-║  (2) « \033[30;1;41mDeletar Lista\033[0;0m »   ║
-║  (3) « \033[1;32mBubble Sort\033[0;0m »     ║  
-║  (4) « \033[1;33mInsertion Sort\033[0;0m »  ║      
-║  (5) « \033[1;36mShell Sort\033[0;0m »      ║ 
-║  (6) « \033[1;35mMerge Sort\033[0;0m »      ║ 
-║  (7) « \033[1;34mQuick Sort\033[0;0m »      ║
-║  (8)  « \033[30;1;46mComparar\033[0;0m »       ║
-║  (9) « Configurações »   ║
-║  (X)    « \033[1;31mSair\033[0;0m »         ║
+║           MENU           ║
+║  (0) « Imprimir Lista »  ║
+║  (1) « Criar Lista »     ║
+║  (2) « Deletar Lista »   ║
+║  (3) « Bubble Sort »     ║  
+║  (4) « Insertion Sort »  ║      
+║  (5) « Shell Sort »      ║ 
+║  (6) « Merge Sort »      ║ 
+║  (7) « Quick Sort »      ║
+║  (8)  « Comparar »       ║
+║  (9)   « Config »        ║
+║  (X)    « Sair »         ║
 ╚══════════════════════════╝\n''')
 
     escolha = (input('Digita a opção escolhida: ').upper())
