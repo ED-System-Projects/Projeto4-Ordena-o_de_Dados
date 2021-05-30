@@ -1,61 +1,52 @@
-def separador():
-    quant = 200
-    print('-' * quant)
-
 
 # Bubble Sort
 def bubble_sort(lista):
-    print(f'\033[30;1;47mLista desordenada\033[0;0m:\n', lista)
-    lista_bubble = lista.copy()
-    elementos = len(lista_bubble) - 1
+    elementos = len(lista) - 1
     ordenado = False
     while not ordenado:
         ordenado = True
         for i in range(elementos):
-            if lista_bubble[i] > lista_bubble[i + 1]:
-                lista_bubble[i], lista_bubble[i + 1] = lista_bubble[i + 1], lista_bubble[i]
+            if lista[i] > lista[i + 1]:
+                lista[i], lista[i + 1] = lista[i + 1], lista[i]
                 ordenado = False
     separador()
-    print('\033[1;32mBubble Sort\033[0;0m - lista ordenada:\n', lista_bubble)
+    print('\033[1;32mBubble Sort\033[0;0m - lista ordenada:\n', lista)
 
 
 # Insertion Sort
 def insertion_sort(lista):
-    lista_insertion = lista.copy()
-    for i in range(1, len(lista_insertion)):
-        valor_atual = lista_insertion[i]
+    for i in range(1, len(lista)):
+        valor_atual = lista[i]
         posicao_atual = i
-        while posicao_atual > 0 and lista_insertion[posicao_atual - 1] > valor_atual:
-            lista_insertion[posicao_atual] = lista_insertion[posicao_atual - 1]
+        while posicao_atual > 0 and lista[posicao_atual - 1] > valor_atual:
+            lista[posicao_atual] = lista[posicao_atual - 1]
             posicao_atual = posicao_atual - 1
 
-        lista_insertion[posicao_atual] = valor_atual
+        lista[posicao_atual] = valor_atual
     separador()
-    print(f'\033[1;33mInsertion Sort\033[0;0m - lista ordenada:\n', lista_insertion)
+    print(f'\033[1;33mInsertion Sort\033[0;0m - lista ordenada:\n', lista)
 
 
 # Shell Sort
 def shell_sort(lista):
-    lista_shell = lista.copy()
-    tamanho = len(lista_shell)
+    tamanho = len(lista)
     intervalo = tamanho // 2
     while intervalo > 0:
         for i in range(intervalo, tamanho):
-            valor_atual = lista_shell[i]
+            valor_atual = lista[i]
             posicao_atual = i
-            while posicao_atual >= intervalo and lista_shell[posicao_atual - intervalo] > valor_atual:
-                lista_shell[posicao_atual] = lista_shell[posicao_atual - intervalo]
+            while posicao_atual >= intervalo and lista[posicao_atual - intervalo] > valor_atual:
+                lista[posicao_atual] = lista[posicao_atual - intervalo]
                 posicao_atual -= intervalo
 
-            lista_shell[posicao_atual] = valor_atual
+            lista[posicao_atual] = valor_atual
         intervalo //= 2
     separador()
-    print(f'\033[1;36mShell Sort\033[0;0m - lista ordenada:\n', lista_shell)
+    print(f'\033[1;36mShell Sort\033[0;0m - lista ordenada:\n', lista)
 
 
 # Merge Sort
 def merge_sort(lista):
-    lista_merge = lista.copy()
 
     def merge(lista_sort):
         if len(lista_sort) > 1:
@@ -82,14 +73,13 @@ def merge_sort(lista):
                 j += 1
                 k += 1
 
-    merge(lista_merge)
+    merge(lista)
     separador()
-    print(f'\033[1;35mMerge Sort\033[0;0m - lista ordenada:\n', lista_merge)
+    print(f'\033[1;35mMerge Sort\033[0;0m - lista ordenada:\n', lista)
 
 
 # Quick Sort
 def quick_sort(lista):
-    lista_quick = lista.copy()
 
     def partition(lista_sort, menor, maior):
         i = (menor - 1)
@@ -109,9 +99,11 @@ def quick_sort(lista):
             quick(lista_sort, menor, pi - 1)
             quick(lista_sort, pi + 1, maior)
 
-    quick(lista_quick, 0, len(lista_quick) - 1)
+    quick(lista, 0, len(lista) - 1)
     separador()
-    print(f'\033[1;34mQuick Sort\033[0;0m: - lista_sort ordenada:\n', lista_quick)
+    print(f'\033[1;34mQuick Sort\033[0;0m: - lista ordenada:\n', lista)
 
 
-
+def separador():
+    quant = 200
+    print('-' * quant)
