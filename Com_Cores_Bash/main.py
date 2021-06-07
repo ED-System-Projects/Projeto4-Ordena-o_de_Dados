@@ -7,13 +7,15 @@ quantidade_de_chaves = 20000
 limite_max_algarismo = 5000
 
 
-def criar_lista():
+def criar_lista(imprimir):
     if not lista:
         # Criando da Lista
         for i in range(quantidade_de_chaves):
             lista.append(random.randint(1, limite_max_algarismo))
         separador()
-        print(f'\033[30;1;47mLista Criada\033[0;0m:\n', lista)
+        print(f'\033[30;1;47mLista Criada\033[0;0m:\n')
+        if imprimir == 0:
+            print(lista)
         separador()
     else:
         print('A lista já foi criada, caso queira altera-la delete a lista primeiro.')
@@ -57,7 +59,11 @@ while True:
 
     elif escolha == '1':
         print('Criando uma lista...')
-        criar_lista()
+        press = str(input('Deseja imprimir a lista?[S/N]: ')).upper()
+        if press == 'S':
+            criar_lista(0)
+        else:
+            criar_lista(1)
         continue
 
     elif escolha == '2':
@@ -73,7 +79,11 @@ while True:
             print('A lista está vazia, crie uma primeiro...')
         else:
             print('Ordenando com Bubble Sort...')
-            ordenar_bubble(lista)
+            press = str(input('Deseja imprimir a lista?[S/N]: ')).upper()
+            if press == 'S':
+                ordenar_bubble(lista, 0)
+            else:
+                ordenar_bubble(lista, 1)
         continue
 
     elif escolha == '4':
@@ -81,7 +91,11 @@ while True:
             print('A lista está vazia, crie uma primeiro...')
         else:
             print('Ordenando com Insertion Sort...')
-            ordenar_insertion(lista)
+            press = str(input('Deseja imprimir a lista?[S/N]: ')).upper()
+            if press == 'S':
+                ordenar_insertion(lista, 0)
+            else:
+                ordenar_insertion(lista, 1)
         continue
 
     elif escolha == '5':
@@ -89,7 +103,11 @@ while True:
             print('A lista está vazia, crie uma primeiro...')
         else:
             print('Ordenando com Shell Sort...')
-            ordenar_shell(lista)
+            press = str(input('Deseja imprimir a lista?[S/N]: ')).upper()
+            if press == 'S':
+                ordenar_shell(lista, 0)
+            else:
+                ordenar_shell(lista, 1)
         continue
 
     elif escolha == '6':
@@ -97,7 +115,11 @@ while True:
             print('A lista está vazia, crie uma primeiro...')
         else:
             print('Ordenando com Merge Sort...')
-            ordenar_merge(lista)
+            press = str(input('Deseja imprimir a lista?[S/N]: ')).upper()
+            if press == 'S':
+                ordenar_merge(lista, 0)
+            else:
+                ordenar_merge(lista, 1)
         continue
 
     elif escolha == '7':
@@ -105,7 +127,11 @@ while True:
             print('A lista está vazia, crie uma primeiro...')
         else:
             print('Ordenando com Quick Sort...')
-            ordenar_quick(lista)
+            press = str(input('Deseja imprimir a lista?[S/N]: ')).upper()
+            if press == 'S':
+                ordenar_quick(lista, 0)
+            else:
+                ordenar_quick(lista, 1)
         continue
 
     elif escolha == '8':
@@ -113,11 +139,19 @@ while True:
             print('A lista está vazia, crie uma primeiro...')
         else:
             print('Comparando Algoritmos...')
-            ordenar_bubble(lista)
-            ordenar_insertion(lista)
-            ordenar_shell(lista)
-            ordenar_merge(lista)
-            ordenar_quick(lista)
+            press = str(input('Deseja imprimir a lista?[S/N]: ')).upper()
+            if press == 'S':
+                ordenar_bubble(lista, 0)
+                ordenar_insertion(lista, 0)
+                ordenar_shell(lista, 0)
+                ordenar_merge(lista, 0)
+                ordenar_quick(lista, 0)
+            else:
+                ordenar_bubble(lista, 1)
+                ordenar_insertion(lista, 1)
+                ordenar_shell(lista, 1)
+                ordenar_merge(lista, 1)
+                ordenar_quick(lista, 1)
         continue
 
     elif escolha == '9':
